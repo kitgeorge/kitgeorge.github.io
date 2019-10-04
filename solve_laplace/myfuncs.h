@@ -1,20 +1,21 @@
-int solve_laplace(int dims[2], double alpha, int N_iter, int N_samples, double psi[ dims[0] ][ dims[1] ], 
+#include <stdio.h>
+int solve_laplace(int dims[2], double alpha, int N_iter, int N_samples, double psi[ dims[0] ][ dims[1] ],
 				  double hist_values[N_samples][N_iter]);
-				  
-int iterate_sequential_relax_record(int dims[2], double alpha, int N_iter, int N_samples, int sequence_length, 
+
+int iterate_sequential_relax_record(int dims[2], double alpha, int N_iter, int N_samples, int sequence_length,
 									double psi[ dims[0] ][ dims[1] ], double hist_values[N_samples][N_iter],
 									int coords_sequence[sequence_length][2], int sample_coords[N_samples][2]);
-									
-int check_point_converging(int N_samples, int N_iter, double hist_values[N_samples][N_iter], int sample_no, 
+
+int check_point_converging(int N_samples, int N_iter, double hist_values[N_samples][N_iter], int sample_no,
 						   int cnvg_count[N_samples], int iter_no);
-						   
+
 int check_points_converged(int N_samples, int cnvg_count[N_samples]);
 
 int find_greatest_boundaries(int dims[2], double psi[ dims[0] ][ dims[1] ], int highbounds[2]);
 
-int gen_coords_sequence(int dims[2], int sequence_length, int coords_sequence[sequence_length][2], 
+int gen_coords_sequence(int dims[2], int sequence_length, int coords_sequence[sequence_length][2],
                       int highbounds[2]);
-					  
+
 int get_sample_coords(int dims[2], int N_samples, int sample_coords[N_samples][2]);
 
 int over_relax(int dims[2], double alpha, double psi[ dims[0] ][ dims[1] ], int coords[2]);
