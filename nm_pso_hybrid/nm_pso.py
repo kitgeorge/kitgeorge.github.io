@@ -202,7 +202,7 @@ class GlobalSwarm(ParticleList):
         return 0
 
 def nm_pso_hybrid(func, lb, ub, omega=0.5, phip=0.5, phig=0.5, eta=5,
-                  kappa=0.5, minfunc=1e-8, minstep=1e-8, n_particles=7,
+                  kappa=0.5, minfunc=1e-8, minstep=1e-8, n_particles=100,
                   max_iter=100):
     parameters = Params()
     parameters.set_params(lb, ub, func, omega, phip, phig, eta, kappa,
